@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BulletinKit: print-ready bulletins, programs and club handbooks</title>
+<meta name="description" content="Six-page print-ready templates for church bulletins, school play programs and club handbooks. A4 and US Letter, PDF for printing, Word for editing.">
+<style>
+/* Hallmark v2.0.0 · editorial · paper / ink / navy + gold · one idea per screen
+   critique: the sheet on the hero is the product itself, not a decoration; prices sit beside the sheet, not in a table of features */
+:root{
+  --paper:#fffdf9; --paper-2:#f4f0e6; --ink:#17181a; --ink-2:#4a4c50;
+  --navy:#1f3557; --gold:#7a5c1e; --line:#dcd5c6; --white:#fffdfa;
+  --font-head:Georgia,"Times New Roman",serif;
+  --font-body:"Segoe UI",-apple-system,Helvetica,Arial,sans-serif;
+  --step--1:.82rem; --step-0:1rem; --step-1:1.16rem; --step-2:1.42rem;
+  --step-3:2.6rem; --step-4:3rem; --step-5:3.6rem;
+  --s1:.5rem; --s2:1rem; --s3:1.6rem; --s4:2.6rem; --s5:4rem; --s6:6rem;
+  --measure:34rem; --container:74rem; --radius:2px;
+  --shadow:0 1px 2px rgba(23,24,26,.06),0 12px 32px -12px rgba(23,24,26,.22);
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--font-body);font-size:var(--step-0);line-height:1.6;
+}
+h1,h2,h3{font-family:var(--font-head);font-weight:400;line-height:1.1;margin:0;
+  overflow-wrap:break-word;min-width:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 var(--s3)}
+@media(min-width:90rem){.wrap{padding:0 var(--s5)}}
+.muted{color:var(--ink-2)}
+.small{font-size:var(--step--1)}
+
+/* nav */
+.nav{border-bottom:1px solid var(--line);background:var(--paper)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);
+  height:4.25rem}
+.wordmark{font-family:var(--font-head);font-size:var(--step-1);letter-spacing:.01em;
+  text-decoration:none;white-space:nowrap}
+.wordmark span{color:var(--gold)}
+.nav-links{display:flex;gap:var(--s3);align-items:center}
+.nav-links a{font-size:var(--step--1);text-decoration:none;color:var(--ink-2);white-space:nowrap}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a.btn{color:var(--white)}
+.nav-links a.btn:hover{color:var(--white);background:var(--ink)}
+@media(max-width:44rem){.nav-links a:not(.btn){display:none}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--font-body);font-size:var(--step-0);line-height:1;
+  padding:.85em 1.35em;border-radius:var(--radius);border:1px solid var(--navy);
+  background:var(--navy);color:var(--white);text-decoration:none;cursor:pointer;
+  transition:background .18s ease,color .18s ease,transform .18s ease}
+.btn:hover{background:var(--ink);border-color:var(--ink)}
+.btn:active{transform:translateY(1px)}
+.btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.btn[aria-disabled="true"],.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{background:var(--paper-2);color:var(--ink);border-color:var(--ink)}
+.btn-small{font-size:var(--step--1);padding:.7em 1.1em}
+
+/* hero */
+.hero{border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);
+  gap:var(--s5);align-items:center;padding-top:var(--s5);padding-bottom:var(--s5)}
+@media(max-width:60rem){.hero .wrap{grid-template-columns:minmax(0,1fr);gap:var(--s4);padding-top:var(--s4)}}
+.hero h1{font-size:clamp(2.1rem,4.4vw,var(--step-5));letter-spacing:-.012em}
+.hero .lede{margin-top:var(--s3);font-size:var(--step-1);color:var(--ink-2);max-width:26rem}
+.hero-actions{margin-top:var(--s4);display:flex;flex-wrap:wrap;gap:var(--s2);align-items:center}
+.hero-note{margin-top:var(--s2);font-size:var(--step--1);color:var(--ink-2)}
+.sheets{position:relative;display:flex;justify-content:center;align-items:flex-start;
+  gap:0;min-height:0}
+.sheets .sheet{box-shadow:var(--shadow);background:var(--white);border:1px solid var(--line);
+  height:min(72vh,640px);width:auto;border-radius:1px}
+.sheets .back{margin-top:2rem;margin-right:-2.4rem;transform:rotate(-2.2deg)}
+.sheets .front{transform:rotate(1.1deg)}
+@media(max-width:60rem){.sheets{max-width:24rem;margin:0 auto}
+  .sheets .sheet{height:min(42vh,300px)}
+  .sheets .back{margin-right:-1rem;margin-top:1rem}}
+
+/* sections */
+section{border-bottom:1px solid var(--line)}
+.sec{padding:var(--s6) 0}
+.sec-head{max-width:38rem}
+.sec-head h2{font-size:var(--step-3)}
+.sec-head p{margin-top:var(--s2);color:var(--ink-2)}
+
+/* kits */
+.kits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s4);margin-top:var(--s5)}
+@media(max-width:60rem){.kits{grid-template-columns:minmax(0,1fr);gap:var(--s3)}}
+.kit{display:flex;flex-direction:column;gap:var(--s3)}
+.kit .shot{border:1px solid var(--line);background:var(--white);box-shadow:var(--shadow);
+  border-radius:1px;height:21rem;object-fit:cover;object-position:top}
+.kit h3{font-size:var(--step-2)}
+.kit p{color:var(--ink-2);font-size:var(--step-0)}
+.kit .price{margin-top:auto;display:flex;align-items:baseline;gap:.5rem;padding-top:var(--s2);
+  border-top:1px solid var(--line)}
+.kit .price b{font-family:var(--font-head);font-size:var(--step-2);font-weight:400;
+  font-variant-numeric:tabular-nums}
+.kit .price span{font-size:var(--step--1);color:var(--ink-2)}
+.buy{align-self:flex-start;font-size:var(--step--1);color:var(--navy);text-decoration:none;
+  border-bottom:1px solid var(--navy);padding-bottom:1px}
+.buy:hover{color:var(--ink);border-color:var(--ink)}
+.buy:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* spec + steps */
+.split{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:var(--s6)}
+@media(max-width:60rem){.split{grid-template-columns:minmax(0,1fr);gap:var(--s4)}}
+@media(max-width:44rem){.sheets .back{display:none}.sheets .front{height:min(48vh,340px)}}
+.spec{width:100%;border-collapse:collapse;margin-top:var(--s3)}
+.spec th,.spec td{text-align:left;padding:.85rem 0;border-bottom:1px solid var(--line);
+  font-size:var(--step-0);vertical-align:top}
+.spec th{font-weight:400;color:var(--ink-2);width:11rem;font-size:var(--step--1)}
+@media(max-width:30rem){.spec th{width:8rem}}
+.steps{list-style:none;padding:0;margin:var(--s3) 0 0;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding:0 0 var(--s3) 2.6rem;
+  border-left:1px solid var(--line);margin-left:.6rem}
+.steps li:last-child{border-left-color:transparent;padding-bottom:0}
+.steps li::before{content:counter(s);position:absolute;left:-.65rem;top:-.1rem;width:1.3rem;
+  height:1.3rem;border-radius:50%;background:var(--paper);border:1px solid var(--navy);
+  color:var(--navy);font-size:.72rem;line-height:1.25rem;text-align:center}
+.steps strong{display:block;font-family:var(--font-head);font-size:var(--step-1);font-weight:400}
+.steps span{color:var(--ink-2);font-size:var(--step-0)}
+
+/* cta */
+.cta{background:var(--paper-2)}
+.cta .wrap{padding:var(--s6) var(--s3);display:flex;flex-wrap:wrap;
+  align-items:center;justify-content:space-between;gap:var(--s4)}
+.cta h2{font-size:var(--step-3);max-width:24rem}
+.cta .acts{display:flex;gap:var(--s2);flex-wrap:wrap}
+
+/* footer */
+footer{padding:var(--s5) 0;color:var(--ink-2);font-size:var(--step--1)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:var(--s3);justify-content:space-between}
+.flinks{display:flex;flex-wrap:wrap}
+.flinks a{text-decoration:none;padding:0 .9rem;border-left:1px solid var(--line)}
+.flinks a:first-child{padding-left:0;border-left:0}
+footer a{color:var(--ink-2)}
+footer a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+<link rel="canonical" href="https://waigua3ye.github.io/bulletinkit/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BulletinKit: print-ready bulletins, programs and club handbooks">
+<meta property="og:description" content="Six-page print-ready templates for church bulletins, school play programs and club handbooks. A4 and US Letter, PDF for printing, Word for editing.">
+<meta property="og:url" content="https://waigua3ye.github.io/bulletinkit/">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "BulletinKit", "url": "https://waigua3ye.github.io/bulletinkit/", "description": "Six-page print-ready templates for church bulletins, school play programs and club handbooks. A4 and US Letter, PDF for printing, Word for editing."}</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="wordmark" href="./">Bulletin<span>Kit</span></a>
+    <nav class="nav-links">
+      <a href="#kits">The kits</a>
+      <a href="#inside">What’s inside</a>
+      <a href="free/">Free sample</a>
+      <a class="btn btn-small" href="https://payhip.com/b/D03aV?utm_source=site&utm_medium=nav&utm_campaign=launch">Get the bundle</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Print a finished bulletin in five minutes.</h1>
+      <p class="lede">Six pages, two paper sizes. Fill in the brackets, press print.</p>
+      <div class="hero-actions">
+        <a class="btn" href="https://payhip.com/b/D03aV?utm_source=site&utm_medium=hero&utm_campaign=launch">Get the three kits, $19</a>
+        <a class="btn btn-ghost" href="free/">Download the free sample</a>
+      </div>
+      <p class="hero-note">PDF to print, Word to edit. A4 and US Letter in every kit.</p>
+    </div>
+    <div class="sheets">
+      <img class="sheet back" src="assets/church_inner.png" alt="Inside page of the church bulletin template: order of service" width="620" height="877">
+      <img class="sheet front" src="assets/church_cover.png" alt="Cover page of the church bulletin template" width="620" height="877">
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="kits">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Three kits, one job each</h2>
+      <p>Same structure, three different rooms.</p>
+    </div>
+    <div class="kits">
+      <article class="kit">
+        <img class="shot" src="assets/church_cover.png" alt="Church bulletin template cover" width="620" height="877">
+        <h3>Church Bulletin Kit</h3>
+        <p>Service order, notices, prayer list, calendar.</p>
+        <p class="price"><b>$12</b><span>A4 + Letter</span></p>
+        <span style="display:flex;gap:1rem"><a class="buy" href="product/church.html">Details</a><a class="buy" href="https://payhip.com/b/qdEmR?utm_source=site&utm_medium=kitcard&utm_campaign=launch">Get it</a></span>
+      </article>
+      <article class="kit">
+        <img class="shot" src="assets/school_cover.png" alt="School play program template cover" width="620" height="877">
+        <h3>School Program Kit</h3>
+        <p>Run of show, family notices, cast and crew.</p>
+        <p class="price"><b>$12</b><span>A4 + Letter</span></p>
+        <span style="display:flex;gap:1rem"><a class="buy" href="product/school.html">Details</a><a class="buy" href="https://payhip.com/b/j37vt?utm_source=site&utm_medium=kitcard&utm_campaign=launch">Get it</a></span>
+      </article>
+      <article class="kit">
+        <img class="shot" src="assets/club_cover.png" alt="Club handbook template cover" width="620" height="877">
+        <h3>Club Handbook Kit</h3>
+        <p>Agenda, notices, roster, event calendar.</p>
+        <p class="price"><b>$12</b><span>A4 + Letter</span></p>
+        <span style="display:flex;gap:1rem"><a class="buy" href="product/club.html">Details</a><a class="buy" href="https://payhip.com/b/9VRug?utm_source=site&utm_medium=kitcard&utm_campaign=launch">Get it</a></span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="inside">
+  <div class="wrap split">
+    <div>
+      <h2 style="font-size:var(--step-3)">In every kit</h2>
+      <table class="spec">
+        <tr><th>Pages</th><td>Six, one per sheet.</td></tr>
+        <tr><th>Paper sizes</th><td>A4 and US Letter, separate files.</td></tr>
+        <tr><th>Formats</th><td>PDF to print, Word to edit.</td></tr>
+        <tr><th>Margins</th><td>0.25 in on every edge.</td></tr>
+      </table>
+    </div>
+    <div>
+      <h2 style="font-size:var(--step-3)">Print, don’t design</h2>
+      <ol class="steps">
+        <li><strong>Open your paper size</strong><span>Letter in the US, A4 elsewhere.</span></li>
+        <li><strong>Type over the brackets</strong><span>In Word. Frames stay put.</span></li>
+        <li><strong>Print at 100%</strong><span>Not “fit to page”.</span></li>
+      </ol>
+      <p style="margin-top:var(--s3)"><a class="buy" href="free/">Free sample page</a></p>
+      <img src="assets/school_inner.png" alt="Inside page of the school program template: notices for families" width="620" height="877" style="margin-top:var(--s4);border:1px solid var(--line);box-shadow:var(--shadow);max-width:20rem">
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="buy">
+  <div class="wrap">
+    <h2>Start with the kit you need. $12, one purchase, no subscription.</h2>
+    <div class="acts">
+      <a class="btn" href="https://payhip.com/b/D03aV?utm_source=site&utm_medium=cta&utm_campaign=launch">Get all three, $19</a>
+      <a class="btn btn-ghost" href="#kits">Or pick one kit</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>BulletinKit: print-ready templates for churches, schools and clubs.<br>
+      Questions: <a href="mailto:hello@bulletinkit.example">hello@bulletinkit.example</a></div>
+    <div class="flinks"><a href="#kits">Kits</a><a href="free/">Free sample</a><a href="#inside">What’s inside</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
