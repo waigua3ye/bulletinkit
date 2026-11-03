@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://waigua3ye.github.io/bulletinkit/sitemap.xml
